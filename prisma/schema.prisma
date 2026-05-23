@@ -1,0 +1,20 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Personaje {
+  id           Int    @id @default(autoincrement())
+  nombre       String
+  colorPiel    String
+  raza         String
+  fuerza       Int
+  agilidad     Int
+  magia        Int
+  conocimiento Int
+}
